@@ -26,8 +26,6 @@
   },
   "lint-staged": {
     "*.ts": [
-      "npm run lint",
-      "npm run format",
       "git add ."
     ]
   }
