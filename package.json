@@ -8,7 +8,8 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "start:prod": "vite build && serve -s dist",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "prettify": "prettier --write"
   },
   "dependencies": {
     "vue": "^3.2.37",
@@ -20,6 +21,7 @@
     "@vitejs/plugin-vue": "^3.1.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"
@@ -27,6 +29,9 @@
   "lint-staged": {
     "*.ts": [
       "git add ."
+    ],
+    "*.{md,json}": [
+      "prettier --write"
     ]
   }
 }
