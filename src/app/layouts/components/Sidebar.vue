@@ -1,10 +1,21 @@
 <script lang="ts">
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 export default {
   name: 'Sidebar',
-  methods: {
-    activeRouter(path: string) {
-      return this.$route.path === path;
-    },
+  setup() {
+    const route = useRoute();
+
+    const path = computed(() => route.path);
+
+    const activeRouter = (router: string) => {
+      return path.value === router;
+    };
+
+    return {
+      path,
+      activeRouter,
+    };
   },
 };
 </script>

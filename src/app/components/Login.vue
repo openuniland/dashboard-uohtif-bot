@@ -3,6 +3,7 @@ import Password from 'primevue/password';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import Image from 'primevue/image';
+import { useRouter } from 'vue-router';
 import image from '@/assets/images/wellcome.png';
 
 export default {
@@ -13,22 +14,23 @@ export default {
     Button,
     Image,
   },
+  setup() {
+    const router = useRouter();
+
+    const login = () => {
+      router.push('/dashboard');
+    };
+
+    return {
+      router,
+      login,
+    };
+  },
   data() {
     return {
       password: '',
       image: image,
-      closable: true,
     };
-  },
-  methods: {
-    login() {
-      console.log('login', this.password);
-      if (this.password === '123456') {
-        this.$router.push({ name: 'Dashboard' });
-      } else {
-        this.closable = false;
-      }
-    },
   },
 };
 </script>
@@ -67,6 +69,6 @@ export default {
 }
 
 .btn {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 </style>

@@ -2,9 +2,10 @@
 import DataTable from 'primevue/datatable';
 import InputText from 'primevue/inputtext';
 import Column from 'primevue/column';
-import { FilterMatchMode, FilterOperator } from 'primevue/api';
+import { FilterMatchMode } from 'primevue/api';
 import { getAllUsers } from '@/services/users';
 import { UserType } from '@/types/users';
+import { onMounted, ref } from 'vue';
 
 export default {
   name: 'UsersTable',
@@ -13,20 +14,26 @@ export default {
     Column,
     InputText,
   },
+  setup() {
+    const users = ref([] as UserType[]);
+
+    async function fetchData() {
+      const res = await getAllUsers();
+      users.value = res;
+      return res;
+    }
+
+    onMounted(async () => {
+      fetchData();
+    });
+    return { users };
+  },
   data() {
     return {
-      users: [] as UserType[],
       filters: {
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
       },
     };
-  },
-  mounted() {
-    (async () => {
-      const users = await getAllUsers();
-
-      this.users = users;
-    })();
   },
 };
 </script>
