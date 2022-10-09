@@ -1,3 +1,13 @@
+<script lang="ts">
+import Login from '@/app/components/Login.vue';
+
+export default {
+  name: 'HomePage',
+  components: {
+    Login,
+  },
+};
+</script>
 <template>
-  <h1>This is App!</h1>
+  <Login />
 </template>

@@ -1,15 +1,32 @@
 <script lang="ts">
-import Header from "@/app/layouts/components/Header.vue";
+import Sidebar from '@/app/layouts/components/Sidebar.vue';
 
 export default {
   components: {
-    Header,
+    Sidebar,
   },
 };
 </script>
 
 <template>
-  <Header />
-  <h1>home layout</h1>
-  <slot />
+  <div class="home-layout p-8">
+    <Sidebar class="sidebar" />
+    <slot class="slot" />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.home-layout {
+  display: flex;
+  width: 100%;
+
+  & .slot {
+    flex: 1;
+  }
+
+  & .sidebar {
+    width: 250px;
+    margin-right: 20px;
+  }
+}
+</style>

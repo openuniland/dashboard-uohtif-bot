@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import NotFound from '@/app/pages/NotFound.vue';
 import Dashboard from '@/app/pages/Dashboard.vue';
 import HomePage from '@/app/pages/HomePage.vue';
+import UsersPage from '@/app/pages/UsersPage.vue';
 
 //Layouts
 import DefaultLayout from '@/app/layouts/versions/DefaultLayout.vue';
@@ -19,6 +20,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    meta: { layout: HomeLayout },
+  },
+  {
+    path: '/users',
+    name: 'UsersPage',
+    component: UsersPage,
     meta: { layout: HomeLayout },
   },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
