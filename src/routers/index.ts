@@ -1,27 +1,27 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import NotFound from "@/app/pages/NotFound.vue";
-import Dashboard from "@/app/pages/Dashboard.vue";
-import HomePage from "@/app/pages/HomePage.vue";
+import NotFound from '@/app/pages/NotFound.vue';
+import Dashboard from '@/app/pages/Dashboard.vue';
+import HomePage from '@/app/pages/HomePage.vue';
 
 //Layouts
-import DefaultLayout from "@/app/layouts/versions/DefaultLayout.vue";
-import HomeLayout from "@/app/layouts/versions/HomeLayout.vue";
+import DefaultLayout from '@/app/layouts/versions/DefaultLayout.vue';
+import HomeLayout from '@/app/layouts/versions/HomeLayout.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: HomePage,
     meta: { layout: DefaultLayout },
   },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: '/dashboard',
+    name: 'Dashboard',
     component: Dashboard,
     meta: { layout: HomeLayout },
   },
-  { path: "/:pathMatch(.*)*", name: "NotFound", component: NotFound },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ];
 
 const router = createRouter({

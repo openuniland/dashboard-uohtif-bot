@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <Header></Header>
+  <Header />
   <h1>home layout</h1>
-  <slot></slot>
+  <slot />
 </template>

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { computed } from "@vue/reactivity";
+import { computed } from "vue";
 import { useRouter } from "vue-router";
 import DefaultLayout from "@/app/layouts/versions/DefaultLayout.vue";
 
@@ -17,5 +17,7 @@ export default {
 </script>
 
 <template>
-  <component :is="layout"> <router-view /></component>
+  <component :is="layout">
+    <router-view />
+  </component>
 </template>

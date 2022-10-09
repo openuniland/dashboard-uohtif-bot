@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "start:prod": "vite build && serve -s dist",
     "prepare": "npx husky install",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write",
+    "lint": "eslint 'src/**/*.{js,ts,vue}' --fix"
   },
   "dependencies": {
     "vue": "^3.2.37",
@@ -18,7 +19,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
     "@vitejs/plugin-vue": "^3.1.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",

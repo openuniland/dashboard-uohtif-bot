@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "parser": "vue-eslint-parser",
+  "extends": ["plugin:vue/vue3-recommended"],
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "parser": "@typescript-eslint/parser",
+    "extraFileExtensions": [".vue"],
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "vue/no-reserved-component-names": "off",
+    "vue/multi-word-component-names": "off",
+    "import/extensions": ["off", "never"],
+    "import/no-extraneous-dependencies": ["off", "never"],
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": "off",
+    "comma-dangle": 0,
+    "vue/no-unused-vars": [
+      "error",
+      {
+        "ignorePattern": "^_"
+      }
+    ],
+    "vue/no-unused-components": [
+      "error",
+      {
+        "ignoreWhenBindingPresent": true
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "ignoreComments": true,
+        "code": 120,
+        "tabWidth": 2,
+        "ignoreStrings": true
+      }
+    ],
+    "operator-linebreak": "off"
+  }
+}
