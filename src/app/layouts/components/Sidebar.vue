@@ -48,9 +48,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #6f6af8;
-  height: 100%;
+  min-height: calc(100vh - 4rem);
   border-radius: 20px;
 }
 

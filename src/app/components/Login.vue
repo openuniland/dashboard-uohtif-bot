@@ -5,6 +5,9 @@ import Button from 'primevue/button';
 import Image from 'primevue/image';
 import { useRouter } from 'vue-router';
 import image from '@/assets/images/wellcome.png';
+import { setAuthkey } from '@/utils/storage';
+import { ref } from 'vue';
+import configs from '@/utils/configs';
 
 export default {
   name: 'Login',
@@ -16,20 +19,21 @@ export default {
   },
   setup() {
     const router = useRouter();
+    const password = ref('');
+    const imgUrl = ref(image);
 
     const login = () => {
-      router.push('/dashboard');
+      if (configs.authKey === password.value) {
+        setAuthkey(password.value);
+        router.push('/dashboard');
+      }
     };
 
     return {
       router,
       login,
-    };
-  },
-  data() {
-    return {
-      password: '',
-      image: image,
+      password,
+      imgUrl,
     };
   },
 };
@@ -37,7 +41,7 @@ export default {
 
 <template>
   <div class="wrapper">
-    <Image id="img" :src="image" />
+    <Image id="img" :src="imgUrl" />
     <InputText class="input" placeholder="username" />
     <Password
       v-model="password"
