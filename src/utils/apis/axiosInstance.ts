@@ -26,8 +26,8 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   async function (error: any) {
-    removeItemFromStorage('authKey');
-    window.location.replace('/');
+    // removeItemFromStorage('authKey');
+    // window.location.replace('/');
     console.log(error);
 
     return Promise.reject(error?.response?.data);
