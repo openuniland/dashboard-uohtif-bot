@@ -8,6 +8,7 @@ export default {
     AnalysisChart,
   },
   setup() {
+
     const numberOfUsersFithouToolData = ref(0);
 
     const numberOfUsersFithouTool = async () => {

@@ -8,7 +8,7 @@ const authKey = getAuthkey();
 const axiosInstance = axios.create({
   baseURL: config.baseApiEndpoint,
   headers: {
-    authKey: JSON.parse(authKey || '""'),
+    authKey: authKey || '"not set"',
   },
 });
 
@@ -26,8 +26,8 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   async function (error: any) {
-    // removeItemFromStorage('authkey');
-    // window.location.replace('/');
+    removeItemFromStorage('authKey');
+    window.location.replace('/');
     console.log(error);
 
     return Promise.reject(error?.response?.data);

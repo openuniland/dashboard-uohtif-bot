@@ -3,7 +3,6 @@ import Password from 'primevue/password';
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import Image from 'primevue/image';
-import { useRouter } from 'vue-router';
 import image from '@/assets/images/wellcome.png';
 import { setAuthkey } from '@/utils/storage';
 import { ref } from 'vue';
@@ -17,17 +16,17 @@ export default {
     Image,
   },
   setup() {
-    const router = useRouter();
     const password = ref('');
     const imgUrl = ref(image);
 
     const login = () => {
       setAuthkey(password.value);
-      router.push('/dashboard');
+      setTimeout(() => {
+        window.location.replace('/dashboard');
+      }, 500);
     };
 
     return {
-      router,
       login,
       password,
       imgUrl,

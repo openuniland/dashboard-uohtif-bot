@@ -1,10 +1,10 @@
 // SET STORAGE
-const setAuthkey = (authkey: any) => {
-  localStorage.setItem('authkey', JSON.stringify(authkey));
+const setAuthkey = (authKey: any) => {
+  localStorage.setItem('authKey', JSON.stringify(authKey));
 };
 
 // GET FROM STORAGE
-const getAuthkey = () => localStorage.getItem('authkey');
+const getAuthkey = () => JSON.parse(localStorage.getItem('authKey') || '""');
 
 // Remove items from storage
 export const removeItemFromStorage = (key: any) => localStorage.removeItem(key);
