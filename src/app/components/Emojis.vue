@@ -1,10 +1,12 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { emojis } from '@/utils/emojis';
+
 export default defineComponent({
   name: 'Emojis',
   components: {},
-  setup(context: any) {
+  emits: ['getEmoji'],
+  setup(props, { emit }) {
     const emojisList = ref(emojis);
     const emoji = ref('');
     const show = ref(true);
@@ -12,7 +14,7 @@ export default defineComponent({
     const getEmoji = (e: string) => {
       emoji.value = e;
 
-      context.emit('getEmoji', e);
+      emit('getEmoji', e);
 
       return e;
     };
