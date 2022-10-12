@@ -23,10 +23,8 @@ export default {
     const imgUrl = ref(image);
 
     const login = () => {
-      if (configs.authKey === password.value) {
-        setAuthkey(password.value);
-        router.push('/dashboard');
-      }
+      setAuthkey(password.value);
+      router.push('/dashboard');
     };
 
     return {
