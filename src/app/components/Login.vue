@@ -7,7 +7,6 @@ import { useRouter } from 'vue-router';
 import image from '@/assets/images/wellcome.png';
 import { setAuthkey } from '@/utils/storage';
 import { ref } from 'vue';
-import configs from '@/utils/configs';
 
 export default {
   name: 'Login',

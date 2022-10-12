@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-import configs from '@/utils/configs';
+import config from '@/utils/configs';
 import { getAuthkey, removeItemFromStorage } from '@/utils/storage';
 
-const authkey = getAuthkey();
+const authKey = getAuthkey();
 
 const axiosInstance = axios.create({
-  baseURL: configs.baseApiEndpoint,
+  baseURL: config.baseApiEndpoint,
   headers: {
-    authkey: JSON.parse(authkey || '""'),
+    authKey: JSON.parse(authKey || '""'),
   },
 });
 
