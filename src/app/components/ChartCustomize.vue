@@ -1,8 +1,8 @@
 <script lang="ts">
+import { defineComponent, ref, reactive } from 'vue';
 import Chart from 'primevue/chart';
-import { ref, reactive } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'ChartCustomize',
   components: {
     Chart,
@@ -49,7 +49,7 @@ export default {
 
     return { chartData, lightOptions };
   },
-};
+});
 </script>
 
 <template>

@@ -1,10 +1,10 @@
 <script lang="ts">
+import { defineComponent, ref } from 'vue';
 import { emojis } from '@/utils/emojis';
-import { ref } from 'vue';
-export default {
+export default defineComponent({
   name: 'Emojis',
   components: {},
-  setup(props, context) {
+  setup(context: any) {
     const emojisList = ref(emojis);
     const emoji = ref('');
     const show = ref(true);
@@ -27,7 +27,7 @@ export default {
 
     return { emojisList, getEmoji, show, showEmojis, handleFocusOut };
   },
-};
+});
 </script>
 
 <template>
